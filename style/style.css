@@ -1,0 +1,200 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  font-family: 'VT323', monospace;
+}
+.main-bg,
+.bg-photo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.main-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  min-height: 90vh;
+  padding-top: 390px;
+}
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.to-animation {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+.to-animation:hover {
+  color: #ff0000;
+  transform: scale(1.4);
+  transition: 1.4s linear;
+}
+
+/* animation-page */
+.wrapper-animation {
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+}
+.nav-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.nav-back__link {
+  display: block;
+  padding: 8px 30px;
+  text-decoration: none;
+  font-size: 26px;
+  color: #ffffff;
+  background: #dd31b8;
+  border-radius: 5px;
+}
+.nav-back__link:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  animation: glowing 10s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.nav-back__link:hover {
+  color: #211da0;
+  background-color: #48ff00;
+}
+.nav-back__link:hover:before {
+  opacity: 1;
+}
+.bg-photo {
+  background: url(../images/bg-photo.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+/* animatiom-sky */
+.cloud {
+  position: absolute;
+  top: 0;
+  right: 80px;
+  animation: wind 1.5s linear alternate-reverse infinite;
+}
+.cloud__image {
+  height: 240px;
+  width: 240px;
+}
+.carousel {
+  width: 80%;
+  display: flex;
+  overflow: hidden;
+}
+.slide {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: fly 10s linear infinite;
+}
+.slide__img {
+  margin: 0 150px;
+  height: 150px;
+}
+.slide__img--3 {
+  height: 250px;
+}
+
+/* animation running-man*/
+.sprite {
+  position: relative;
+  width: 1200px;
+  min-height: 60vh;
+  display: flex;
+  align-items: end;
+}
+.sprite__image {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background: url(../images/sprite.png);
+  animation: play 0.8s steps(6) infinite, step 7s linear infinite;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes wind {
+  0% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes play {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -900px;
+  }
+}
+@keyframes step {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
