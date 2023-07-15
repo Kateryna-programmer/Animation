@@ -1,0 +1,5 @@
+#Ignore different folders and files
+node_modules/
+.idea/
+.vscode/
+.DS_Store
