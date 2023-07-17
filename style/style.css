@@ -121,10 +121,17 @@ body {
   height: 240px;
   width: 240px;
 }
+.cloud:hover {
+  animation-play-state: paused;
+}
 .carousel {
   width: 80%;
   display: flex;
   overflow: hidden;
+}
+
+.carousel:hover .slide {
+  animation-play-state: paused;
 }
 .slide {
   display: flex;
